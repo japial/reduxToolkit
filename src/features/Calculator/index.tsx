@@ -9,39 +9,36 @@ export default function Calculator() {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <hr />
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <button
-                aria-label="Multiply by 3"
-                onClick={() => dispatch(multiply3(value))}
-                className="m20"
-              >
-                Multiply by 3
-              </button>
-            </td>
-            <td>
-              <button
-                className="m20"
-                aria-label="Divide by 5"
-                onClick={() => dispatch(divide5(value))}
-              >
-                Divide by 5
-              </button>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th colSpan={2}>
-              <strong className="m20">{value ? calc : value}</strong>
-            </th>
-          </tr>
-        </tfoot>
-      </table>
+    <div className="card mt-4">
+      <div className="card-header">
+        Calculated <strong className="text-info">{value ? calc : value}</strong>
+      </div>
+      <div className="card-body">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <button
+                  aria-label="Multiply by 3"
+                  onClick={() => dispatch(multiply3(value))}
+                  className="btn btn-light"
+                >
+                  Multiply by 3
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn btn-light"
+                  aria-label="Divide by 5"
+                  onClick={() => dispatch(divide5(value))}
+                >
+                  Divide by 5
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
